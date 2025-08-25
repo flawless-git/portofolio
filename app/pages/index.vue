@@ -235,7 +235,7 @@ const projects: project[] = [
     logo: '/img/Icon-xFlawless.dev.png',
     description: 'Personal portfolio website built with Nuxt 4, Vue 3, TypeScript, and Tailwind CSS.',
     technologies: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS'],
-    link: '',
+    link: 'https://xflalessdev-portofolio.onrender.com',
     repo: 'https://github.com/flawless-git/portofolio'
   }
 ]
