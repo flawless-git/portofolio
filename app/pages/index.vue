@@ -118,14 +118,13 @@
           <UCard v-for="project in projects" :key="project.tittle"
             class="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <template #header>
-              <div
-                class="aspect-video bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <UIcon :name="project.icon" class="text-4xl text-white" />
+              <div class="aspect-video bg-transparent rounded-lg flex items-center justify-center">
+                <NuxtImg :src="project.logo" class="h-40 w-40" />
               </div>
             </template>
             <div class="space-y-4">
               <h3 class="text-xl font-semibold">{{ project.tittle }}</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-justify">
+              <p class="text-gray-600 dark:text-gray-300">
                 {{ project.description }}
               </p>
               <div v-if="project.technologies" class="flex flex-wrap gap-2">
@@ -134,11 +133,12 @@
                 </UBadge>
               </div>
               <div v-if="project.link || project.repo" class="grid w-full grid-cols-2 gap-2 pt-2">
-                <UButton size="sm" variant="outline" icon="i-heroicons-eye" v-if="project.link" class="justify-center">
+                <UButton size="sm" variant="outline" icon="i-heroicons-eye" :to="project.link" target="_blank"
+                  v-if="project.link" class="justify-center">
                   Live Demo
                 </UButton>
-                <UButton size="sm" variant="ghost" icon="i-simple-icons-github" v-if="project.repo"
-                  class="justify-center">
+                <UButton size="sm" variant="ghost" icon="i-simple-icons-github" :to="project.repo" target="_blank"
+                  v-if="project.repo" class="justify-center">
                   Code
                 </UButton>
               </div>
@@ -207,7 +207,7 @@ useHead({
 interface project {
   tittle: string,
   description: string,
-  icon: string,
+  logo: string,
   technologies: string[]
   link: string,
   repo: string
@@ -215,20 +215,20 @@ interface project {
 
 const projects: project[] = [
   {
-    tittle: 'Analytics Dashboard',
-    icon: 'i-heroicons-chart-bar-square',
-    description: 'Real-time data visualization platform with interactive charts, custom reports, and automated insights generation.',
-    technologies: ['Vue.js', 'Node.js', 'TypeScript'],
-    link: 'https://analytics-dashboard.arifpebryan.com',
-    repo: 'https://github.com/flawless-git/analytics-dashboard'
+    tittle: 'xZenith',
+    logo: '/img/xZenith.png',
+    description: 'xZenith is a cutting-edge hardware monitoring application designed to provide real-time insights into your system\'s performance. It delivers native performance with a beautiful, responsive interface. Monitor your hardware information with precision and style.',
+    technologies: ['Vue.js', 'Rust', 'Tauri'],
+    link: '',
+    repo: 'https://github.com/flawless-git/xZenith-App'
   },
   {
-    tittle: 'Desktop Task Manager',
-    icon: 'i-heroicons-list-bullet',
-    description: 'Desktop application for task management with features like task creation, assignment, priority setting, and deadline tracking.',
-    technologies: ['Electron', 'Node.js', 'TypeScript'],
-    link: 'https://desktop-task-manager.arifpebryan.com',
-    repo: 'https://github.com/flawless-git/desktop-task-manager'
+    tittle: 'Axvier - Modern Blog Platform',
+    logo: '/img/axvier.png',
+    description: 'A modern blog platform built with Nuxt 3, Vue 3, TypeScript, Prisma, and Tailwind CSS.',
+    technologies: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Prisma', 'Tailwind CSS', 'Pinia'],
+    link: 'https://nuxt3-admin-template.onrender.com/',
+    repo: 'https://github.com/flawless-git/nuxt3-shadcn-pinia-admin-template-Axvier'
   }
 ]
 </script>
