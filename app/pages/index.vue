@@ -229,6 +229,14 @@ const projects: project[] = [
     technologies: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Prisma', 'Tailwind CSS', 'Pinia'],
     link: 'https://nuxt3-admin-template.onrender.com/',
     repo: 'https://github.com/flawless-git/nuxt3-shadcn-pinia-admin-template-Axvier'
+  },
+  {
+    tittle: 'Personal Portfolio',
+    logo: '/img/Icon-xFlawless.dev.png',
+    description: 'Personal portfolio website built with Nuxt 4, Vue 3, TypeScript, and Tailwind CSS.',
+    technologies: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS'],
+    link: '',
+    repo: 'https://github.com/flawless-git/portofolio'
   }
 ]
 </script>
